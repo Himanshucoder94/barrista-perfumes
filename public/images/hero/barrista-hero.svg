@@ -1,0 +1,17 @@
+<svg width="1800" height="1200" viewBox="0 0 1800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1800" height="1200" fill="#090909"/>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  <rect width="1800" height="1200" opacity=".12" filter="url(#grain)"/>
+  <radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1150 510) rotate(118) scale(620 360)">
+    <stop stop-color="#C6A66B" stop-opacity=".42"/><stop offset="1" stop-color="#090909" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1800" height="1200" fill="url(#g1)"/>
+  <ellipse cx="1120" cy="905" rx="360" ry="50" fill="#000" opacity=".55"/>
+  <path d="M1014 336h222v496c0 71-49 122-111 122s-111-51-111-122V336Z" fill="#15110E" stroke="#C6A66B" stroke-opacity=".42" stroke-width="3"/>
+  <path d="M1052 364h146v430c0 52-31 91-73 91s-73-39-73-91V364Z" fill="#21160E" opacity=".78"/>
+  <rect x="1064" y="238" width="122" height="92" rx="12" fill="#101010" stroke="#C6A66B" stroke-opacity=".5" stroke-width="3"/>
+  <rect x="1041" y="205" width="168" height="38" rx="8" fill="#181818" stroke="#C6A66B" stroke-opacity=".36"/>
+  <path d="M1088 430c53 18 107 18 161 0v250c-55 24-109 24-161 0V430Z" fill="#C6A66B" opacity=".18"/>
+  <path d="M1216 320c142 70 243 215 260 389" stroke="#F3EEE5" stroke-opacity=".16" stroke-width="2"/>
+  <path d="M935 397c-126 92-184 218-177 378" stroke="#F3EEE5" stroke-opacity=".09" stroke-width="2"/>
+</svg>

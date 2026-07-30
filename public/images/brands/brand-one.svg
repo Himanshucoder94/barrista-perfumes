@@ -1,0 +1,10 @@
+<svg width="1200" height="850" viewBox="0 0 1200 850" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="850" fill="#0A0A0A"/>
+  <radialGradient id="a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(720 348) rotate(116) scale(470 280)">
+    <stop stop-color="#C6A66B" stop-opacity=".38"/><stop offset="1" stop-color="#090909" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="850" fill="url(#a)"/>
+  <path d="M487 233h226v404c0 58-45 102-113 102s-113-44-113-102V233Z" fill="#15110F" stroke="#C6A66B" stroke-opacity=".42" stroke-width="3"/>
+  <rect x="537" y="144" width="126" height="82" rx="10" fill="#111" stroke="#C6A66B" stroke-opacity=".45" stroke-width="3"/>
+  <path d="M527 365c49 16 98 16 146 0v188c-49 20-97 20-146 0V365Z" fill="#C6A66B" opacity=".16"/>
+</svg>

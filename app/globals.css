@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-manrope), Arial, sans-serif;
+}
+
+:root {
+  --near-black: #090909;
+  --charcoal: #141414;
+  --ivory: #f3eee5;
+  --gold: #c6a66b;
+  --grey: #a7a29a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--near-black);
+  color: var(--ivory);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgba(243, 238, 229, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 238, 229, 0.018) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  outline-offset: 4px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 1px solid var(--gold);
+}
+
+::selection {
+  background: rgba(198, 166, 107, 0.35);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.luxury-border {
+  border-color: rgba(198, 166, 107, 0.22);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
