@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
+import { CursorGlow } from "@/components/layout/CursorGlow";
 import { siteConfig } from "@/data/site-config";
 
 const cormorant = Cormorant_Garamond({
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         <main>{children}</main>
         <Footer />
+        <CursorGlow />
         <FloatingWhatsApp />
       </body>
     </html>

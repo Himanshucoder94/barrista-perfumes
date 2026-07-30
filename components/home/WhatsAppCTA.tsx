@@ -5,12 +5,12 @@ import { generalWhatsAppUrl } from "@/lib/whatsapp";
 
 export function WhatsAppCTA() {
   return (
-    <section className="relative overflow-hidden border-t border-white/10 py-24 sm:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(198,166,107,.22),transparent_38%)]" />
+    <section className="aurora-panel relative overflow-hidden border-t border-white/10 py-24 sm:py-36">
+      <div className="mist-layer absolute inset-x-0 bottom-0 h-2/3" />
       <Container className="relative">
-        <div className="max-w-4xl">
+        <div className="max-w-5xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C6A66B]">Direct Enquiry</p>
-          <h2 className="mt-5 text-balance font-serif text-5xl leading-tight text-[#F3EEE5] sm:text-7xl">
+          <h2 className="mt-5 text-balance font-serif text-6xl leading-[0.95] text-[#F3EEE5] sm:text-8xl">
             Your next signature fragrance may be one conversation away.
           </h2>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">

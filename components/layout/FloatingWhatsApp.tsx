@@ -8,7 +8,7 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noreferrer"
       aria-label="Contact Barrista Perfumes on WhatsApp"
-      className="fixed bottom-5 right-5 z-30 inline-flex h-14 w-14 items-center justify-center border border-[#C6A66B] bg-[#090909]/90 text-[#C6A66B] shadow-2xl shadow-black/40 backdrop-blur transition hover:bg-[#C6A66B] hover:text-[#090909] sm:bottom-6 sm:right-6"
+      className="magnetic fixed bottom-5 right-5 z-30 inline-flex h-14 w-14 items-center justify-center border border-[#C6A66B] bg-[#090909]/82 text-[#C6A66B] shadow-[0_0_45px_rgba(198,166,107,.18)] backdrop-blur-xl transition hover:bg-[#C6A66B] hover:text-[#090909] sm:bottom-6 sm:right-6"
     >
       <MessageCircle size={24} />
     </a>

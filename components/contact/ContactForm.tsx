@@ -45,13 +45,13 @@ export function ContactForm() {
     );
   }
 
-  const inputClass = "mt-2 w-full border border-white/12 bg-[#090909] px-4 py-3 text-[#F3EEE5] transition placeholder:text-[#A7A29A]/60 focus:border-[#C6A66B]";
+  const inputClass = "mt-2 w-full border border-[#C6A66B]/18 bg-[#090909]/72 px-4 py-4 text-[#F3EEE5] shadow-[inset_0_1px_0_rgba(255,248,234,.06)] transition placeholder:text-[#A7A29A]/60 focus:border-[#C6A66B] focus:bg-[#0D0D0D]";
   const labelClass = "text-sm font-semibold text-[#F3EEE5]";
   const errorClass = "mt-2 text-sm text-[#E8B4A0]";
 
   return (
-    <form onSubmit={onSubmit} noValidate className="border border-[#C6A66B]/22 bg-[#0D0D0D] p-6 sm:p-8">
-      <h2 className="font-serif text-4xl text-[#F3EEE5]">WhatsApp enquiry</h2>
+    <form onSubmit={onSubmit} noValidate className="glass-surface p-6 sm:p-8">
+      <h2 className="font-serif text-5xl text-[#F3EEE5]">WhatsApp enquiry</h2>
       <p className="mt-3 text-sm leading-7 text-[#A7A29A]">This form opens WhatsApp with your message. No data is stored or sent to a backend.</p>
       <div className="mt-8 grid gap-5">
         <div>
@@ -78,7 +78,7 @@ export function ContactForm() {
           {errors.message ? <p id="message-error" className={errorClass}>{errors.message}</p> : null}
         </div>
       </div>
-      <button type="submit" className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 border border-[#C6A66B] bg-[#C6A66B] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#090909] transition hover:bg-[#F3EEE5]">
+      <button type="submit" className="magnetic mt-8 inline-flex min-h-12 items-center justify-center gap-2 border border-[#C6A66B] bg-[#C6A66B] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#090909] transition hover:bg-[#F3EEE5]">
         <MessageCircle size={18} /> Open WhatsApp
       </button>
     </form>

@@ -7,12 +7,12 @@ import { generalWhatsAppUrl } from "@/lib/whatsapp";
 
 export function MobileMenu({ onClose }: { onClose: () => void }) {
   return (
-    <div className="fixed inset-0 z-50 bg-[#090909]/98 px-6 py-6 backdrop-blur-md md:hidden">
+    <div className="aurora-panel fixed inset-0 z-50 bg-[#090909]/98 px-6 py-6 backdrop-blur-xl animate-[reveal_.35s_ease_both] md:hidden">
       <div className="flex items-center justify-between">
         <Link href="/" onClick={onClose} className="font-serif text-2xl text-[#F3EEE5]">
           Barrista Perfumes
         </Link>
-        <button aria-label="Close menu" onClick={onClose} className="p-2 text-[#F3EEE5]">
+        <button aria-label="Close menu" onClick={onClose} className="border border-[#C6A66B]/25 p-2 text-[#F3EEE5]">
           <X size={24} />
         </button>
       </div>
@@ -22,7 +22,7 @@ export function MobileMenu({ onClose }: { onClose: () => void }) {
             key={item.href}
             href={item.href}
             onClick={onClose}
-            className="border-b border-white/10 pb-5 font-serif text-4xl text-[#F3EEE5]"
+            className="border-b border-[#C6A66B]/18 pb-5 font-serif text-5xl leading-none text-[#F3EEE5]"
           >
             {item.label}
           </Link>
@@ -31,7 +31,7 @@ export function MobileMenu({ onClose }: { onClose: () => void }) {
           href={generalWhatsAppUrl()}
           target="_blank"
           rel="noreferrer"
-          className="mt-4 border border-[#C6A66B] px-5 py-4 text-center text-sm font-semibold uppercase tracking-[0.18em] text-[#C6A66B]"
+          className="magnetic mt-4 border border-[#C6A66B] bg-[#C6A66B] px-5 py-4 text-center text-sm font-semibold uppercase tracking-[0.18em] text-[#090909]"
         >
           WhatsApp
         </a>

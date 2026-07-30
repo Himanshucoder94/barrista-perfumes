@@ -20,13 +20,14 @@ export function FeaturedPerfumes() {
   const selectedBrand = selectedPerfume ? getBrandById(brands, selectedPerfume.brandId) ?? null : null;
 
   return (
-    <section id="collection" className="border-y border-white/10 bg-[#0B0B0B] py-20 sm:py-28">
+    <section id="collection" className="relative overflow-hidden border-y border-[#C6A66B]/16 bg-[#0B0B0B] py-24 sm:py-32">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_8%,rgba(198,166,107,.14),transparent_25rem),radial-gradient(circle_at_82%_28%,rgba(243,238,229,.05),transparent_22rem)]" />
       <Container>
-        <SectionHeading label="Current Catalogue" title="Eight demo fragrances, ready to be replaced.">
-          Browse by brand, gender or fragrance family. Product details open in a focused enquiry overlay, with no cart or checkout.
+        <SectionHeading label="Current Catalogue" title="Fragrances staged like individual signatures.">
+          Browse by brand, gender or fragrance family. Product details open in a focused reveal, with no cart or checkout.
         </SectionHeading>
         <PerfumeFilters filters={filters} activeFilter={activeFilter} onChange={setActiveFilter} />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {filteredPerfumes.map((perfume) => {
             const brand = getBrandById(brands, perfume.brandId);
             if (!brand) return null;

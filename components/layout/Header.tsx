@@ -28,12 +28,13 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed left-0 right-0 top-0 z-40 transition ${
-          scrolled ? "border-b border-[#C6A66B]/20 bg-[#090909]/88 backdrop-blur-md" : "bg-transparent"
+        className={`fixed left-0 right-0 top-0 z-40 transition duration-500 ${
+          scrolled ? "border-b border-[#C6A66B]/24 bg-[#090909]/78 shadow-[0_18px_60px_rgba(0,0,0,.36)] backdrop-blur-xl" : "bg-transparent"
         }`}
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
-          <Link href="/" className="font-serif text-2xl text-[#F3EEE5]">
+          <Link href="/" className="group inline-flex items-baseline gap-3 font-serif text-2xl text-[#F3EEE5]">
+            <span className="h-2 w-2 rounded-full bg-[#C6A66B] shadow-[0_0_22px_rgba(198,166,107,.75)] transition group-hover:scale-125" />
             Barrista Perfumes
           </Link>
           <nav aria-label="Primary navigation" className="hidden items-center gap-8 md:flex">
@@ -41,9 +42,10 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm uppercase tracking-[0.18em] text-[#A7A29A] transition hover:text-[#F3EEE5]"
+                className="group relative text-sm uppercase tracking-[0.18em] text-[#A7A29A] transition hover:text-[#F3EEE5]"
               >
                 {item.label}
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-[#C6A66B] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </nav>
@@ -51,7 +53,7 @@ export function Header() {
             href={generalWhatsAppUrl()}
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-2 border border-[#C6A66B]/50 px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#F3EEE5] transition hover:border-[#C6A66B] hover:bg-[#C6A66B]/10 md:inline-flex"
+            className="magnetic hidden items-center gap-2 border border-[#C6A66B]/50 bg-[#C6A66B]/[.04] px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#F3EEE5] transition hover:border-[#C6A66B] hover:bg-[#C6A66B]/10 md:inline-flex"
           >
             <MessageCircle size={16} /> WhatsApp
           </a>
@@ -59,7 +61,7 @@ export function Header() {
             aria-label="Open menu"
             aria-expanded={open}
             onClick={() => setOpen(true)}
-            className="p-2 text-[#F3EEE5] md:hidden"
+            className="border border-[#C6A66B]/25 p-2 text-[#F3EEE5] md:hidden"
           >
             <Menu size={24} />
           </button>

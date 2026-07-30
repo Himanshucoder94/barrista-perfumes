@@ -11,6 +11,9 @@
   --ivory: #f3eee5;
   --gold: #c6a66b;
   --grey: #a7a29a;
+  --bronze: #7a5735;
+  --pearl: #fff8ea;
+  --amber: #d8984a;
 }
 
 * {
@@ -23,7 +26,11 @@ html {
 
 body {
   margin: 0;
-  background: var(--near-black);
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 70% 0%, rgba(198, 166, 107, 0.12), transparent 28rem),
+    radial-gradient(circle at 10% 40%, rgba(122, 87, 53, 0.18), transparent 32rem),
+    var(--near-black);
   color: var(--ivory);
 }
 
@@ -34,10 +41,22 @@ body::before {
   pointer-events: none;
   content: "";
   background-image:
+    radial-gradient(circle at 18% 18%, rgba(255, 248, 234, 0.04), transparent 15rem),
     linear-gradient(rgba(243, 238, 229, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(243, 238, 229, 0.018) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  content: "";
+  opacity: 0.13;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
 }
 
 a,
@@ -68,6 +87,82 @@ select:focus-visible {
   border-color: rgba(198, 166, 107, 0.22);
 }
 
+.aurora-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.aurora-panel::before {
+  position: absolute;
+  inset: -35%;
+  z-index: -2;
+  content: "";
+  background:
+    radial-gradient(circle at 28% 28%, rgba(198, 166, 107, 0.24), transparent 16rem),
+    radial-gradient(circle at 76% 64%, rgba(122, 87, 53, 0.2), transparent 18rem),
+    radial-gradient(circle at 50% 100%, rgba(243, 238, 229, 0.07), transparent 15rem);
+  animation: ambient-drift 16s ease-in-out infinite alternate;
+}
+
+.aurora-panel::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(115deg, transparent 0 38%, rgba(255, 248, 234, 0.08) 48%, transparent 58%),
+    linear-gradient(to bottom, rgba(9, 9, 9, 0.05), rgba(9, 9, 9, 0.82));
+  opacity: 0.75;
+}
+
+.metal-line {
+  background: linear-gradient(90deg, transparent, rgba(198, 166, 107, 0.75), transparent);
+}
+
+.glass-surface {
+  border: 1px solid rgba(198, 166, 107, 0.22);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.015)),
+    rgba(15, 15, 15, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 248, 234, 0.12), 0 28px 80px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(18px);
+}
+
+.gold-text {
+  color: transparent;
+  background: linear-gradient(100deg, #f3eee5 0%, #c6a66b 42%, #7a5735 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.magnetic {
+  transform: translate3d(0, 0, 0);
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, color 220ms ease;
+}
+
+.magnetic:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+.tilt-card {
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0);
+  transition: transform 500ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(1.5deg) rotateY(-2deg) translateY(-8px);
+}
+
+.mist-layer {
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(243, 238, 229, 0.12), transparent 24rem),
+    radial-gradient(ellipse at 70% 30%, rgba(198, 166, 107, 0.14), transparent 22rem);
+  filter: blur(28px);
+  animation: mist-shift 18s ease-in-out infinite alternate;
+}
+
 @keyframes reveal {
   from {
     opacity: 0;
@@ -76,6 +171,45 @@ select:focus-visible {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes ambient-drift {
+  from {
+    transform: translate3d(-2%, -1%, 0) rotate(0deg) scale(1);
+  }
+  to {
+    transform: translate3d(2%, 1.5%, 0) rotate(6deg) scale(1.05);
+  }
+}
+
+@keyframes mist-shift {
+  from {
+    opacity: 0.32;
+    transform: translate3d(-1.5rem, 1rem, 0);
+  }
+  to {
+    opacity: 0.58;
+    transform: translate3d(1.5rem, -1rem, 0);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0.75rem, -1.25rem, 0) rotate(4deg);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(120%);
   }
 }
 
